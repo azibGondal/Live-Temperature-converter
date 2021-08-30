@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="stlye.css"> -->
+    <title>Document</title>
+    <style>
+        body{
+            padding: 50px 100px;
+            box-sizing: border-box;
+        }
+        #main-heading{
+            text-align: center;
+        }
+        #container{
+            text-align: center;
+            background-color: aquamarine;
+            height: 140px;
+           
+    
+        }
+        .formsection{
+            display: inline-block;
+            margin-top: 22px;
+        }
+        #cel{
+            padding:  6px 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #far{
+            padding:  6px 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        label{
+            font-size: 1.2rem;
+        }
+
+        /* responsice section */
+        @media  only screen and ( max-width: 565px ){
+
+            #container{
+            
+            height: 200px;
+            width: 210px;
+           
+    
+        }
+
+
+
+
+
+
+
+    </style>
+    
+
+   
+</head>
+<body>
+    <h1 id="main-heading">celcius to fahrenhiet converter</h1>
+    <div id="container">
+        <div class="formsection" >
+            <label >Celcius</label> <br>
+            <input type="number" value="0" id="cel">
+
+        </div>
+        <div class="formsection">
+            <label > fahrenhiet</label> <br>
+            <input type="number" value="32" id="far">
+
+        </div>
+        
+    </div>
+    <script>
+        let cel = document.getElementById("cel");
+        let far = document.getElementById("far");
+
+        cel.addEventListener("input",function(){
+          let  c = this.value;
+          let  f=(c * 9/5) + 32 ;
+           far.value = f;
+                   
+        })
+
+        far.addEventListener("input",function(){
+            let f = this.value;
+            let c = (f-32)*5/9;
+            cel.value=c;
+            
+
+})
+
+    </script>
+
+</body>
+</html>
